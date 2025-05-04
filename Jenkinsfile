@@ -10,10 +10,10 @@ pipeline {
 
         stage('Deploy to Apache') {
             steps {
-                script {
-                    sh 'sudo rm -rf /var/www/html/*'
-                    sh 'sudo cp -r * /var/www/html/'
-                }
+                sh '''
+                    rm -rf /var/www/html/*
+                    cp -r * /var/www/html/
+                '''
             }
         }
     }
